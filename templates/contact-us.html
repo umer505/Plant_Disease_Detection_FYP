@@ -1,0 +1,264 @@
+{% extends "base.html" %} {% block title %}Contact Us | Plant Disease
+Detection{% endblock %} {% block extra_css %}
+<style>
+  :root {
+    --primary-color: #05380b;
+    --secondary-color: #4ecc5a;
+    --light-color: #f8f9fa;
+    --dark-color: #042908;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--light-color);
+    color: #333;
+  }
+
+  .navbar {
+    background-color: var(--primary-color) !important;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-brand {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: white !important;
+  }
+
+  .nav-link {
+    color: white !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--secondary-color) !important;
+  }
+
+  .contact-hero {
+    background: linear-gradient(
+      135deg,
+      var(--primary-color) 0%,
+      var(--secondary-color) 100%
+    );
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .contact-title {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .contact-subtitle {
+    font-weight: 400;
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+
+  .team-card {
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    height: 100%;
+    background-color: white;
+    padding: 2rem;
+  }
+
+  .team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .team-name {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .team-bio {
+    color: #666;
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .social-section {
+    margin-top: 2rem;
+  }
+
+  .social-title {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    border-radius: 8px;
+  }
+
+  .social-link:hover {
+    background-color: rgba(78, 204, 90, 0.1);
+    color: var(--primary-color);
+    transform: translateX(5px);
+  }
+
+  .social-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    object-fit: contain;
+  }
+
+  .social-handle {
+    font-weight: 500;
+  }
+
+  .footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: 3rem 0 2rem;
+    margin-top: 3rem;
+  }
+
+  .footer a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .footer a:hover {
+    color: white;
+    text-decoration: none;
+  }
+
+  .footer-social {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+  }
+
+  .footer-social:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+  }
+
+  @media (max-width: 768px) {
+    .contact-title {
+      font-size: 2rem;
+    }
+
+    .contact-subtitle {
+      font-size: 1rem;
+    }
+
+    .team-card {
+      margin-bottom: 1.5rem;
+    }
+  }
+</style>
+{% endblock %} {% block content %}
+<body>
+  <!-- Hero Section -->
+  <section class="contact-hero">
+    <div class="container text-center">
+      <h1 class="contact-title">📞 Contact Us📞</h1>
+      <p class="contact-subtitle">
+        For any queries & suggestions contact us. We're happy to help!
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section
+    class="container mb-5"
+    style="display: flex; justify-content: center; align-items: center"
+  >
+    <div class="col-lg-6">
+      <div class="team-card">
+        <h3 class="team-name">Muniba Naseer</h3>
+        <p class="team-bio">
+          Hi, I am Muniba Naseer. Currently pursuing Bachelors in Information
+          Technology. My main focus is on Machine Learning, Deep Learning and
+          Artificial Intelligence. I am also interested in Blockchain and
+          Flutter App Development.
+        </p>
+
+        <div class="social-section">
+          <h5 class="social-title">Connect With Me</h5>
+          <div class="social-links">
+            <a
+              href="mailto:munibanaseer@gmail.com"
+              class="social-link"
+              target="_blank"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/281/281769.png"
+                class="social-icon"
+                alt="Email"
+              />
+              <span class="social-handle">munibanaseer@gmail.com</span>
+            </a>
+            <a href="#" class="social-link" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5968/5968885.png"
+                class="social-icon"
+                alt="Medium"
+              />
+              <span class="social-handle">muniba-naseer</span>
+            </a>
+            <a href="https://github.com/" class="social-link" target="_blank">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+                class="social-icon"
+                alt="GitHub"
+              />
+              <span class="social-handle">muniba-naseer</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/munibanaseer"
+              class="social-link"
+              target="_blank"
+            >
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
+                class="social-icon"
+                alt="LinkedIn"
+              />
+              <span class="social-handle">Muniba-Naseer</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %} {% block extra_js %}
+<!-- Any page-specific JavaScript here -->
+{% endblock %}

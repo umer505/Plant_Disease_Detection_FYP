@@ -1,0 +1,259 @@
+{% extends "base.html" %}
+
+{% block title %}Supplement Market | Plant Care Products{% endblock %}
+{% block extra_css %}
+<style>
+      :root {
+        --primary-color: #05380b;
+        --secondary-color: #4ecc5a;
+        --light-color: #f8f9fa;
+        --dark-color: #042908;
+        --danger-color: #dc3545;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--light-color);
+        color: #333;
+      }
+
+      .navbar {
+        background-color: var(--primary-color) !important;
+        padding: 1rem 2rem;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: 600;
+        font-size: 1.2rem;
+        color: white !important;
+      }
+
+      .nav-link {
+        color: white !important;
+        font-weight: 500;
+        margin: 0 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: var(--secondary-color) !important;
+      }
+
+      .hero-section {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          var(--secondary-color) 100%
+        );
+        color: white;
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+      }
+
+      .hero-title {
+        font-weight: 700;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-subtitle {
+        font-weight: 400;
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .product-card {
+        transition: all 0.3s ease;
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        height: 100%;
+        background-color: white;
+      }
+
+      .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+
+      .product-card img {
+        object-fit: contain;
+        height: 200px;
+        width: 100%;
+        padding: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .product-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .product-card .card-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-card .card-title {
+        color: var(--primary-color);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .product-card .card-text {
+        color: #666;
+        flex-grow: 1;
+      }
+
+      .btn-buy {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        border: none;
+        transition: all 0.3s ease;
+        align-self: center;
+      }
+
+      .btn-buy:hover {
+        background-color: var(--dark-color);
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        color: white;
+      }
+
+      .badge-healthy {
+        background-color: var(--secondary-color);
+        color: white;
+      }
+
+      .badge-diseased {
+        background-color: var(--danger-color);
+        color: white;
+      }
+
+      .footer {
+        background-color: var(--dark-color);
+        color: white;
+        padding: 3rem 0 2rem;
+        margin-top: 3rem;
+      }
+
+      .footer a {
+        color: rgba(255, 255, 255, 0.8);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer a:hover {
+        color: white;
+        text-decoration: none;
+      }
+
+      .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        margin: 0 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-icon:hover {
+        background-color: var(--secondary-color);
+        transform: translateY(-3px);
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1rem;
+        }
+
+        .product-card {
+          margin-bottom: 1.5rem;
+        }
+      }
+    </style>
+{% endblock %}
+{% block content %}
+ <body>
+   
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="hero-title">
+          🛒 Premium Plant Supplements & Fertilizers 🛒
+        </h1>
+        <p class="hero-subtitle">
+          High-quality products for healthy plants and effective disease
+          treatment
+        </p>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="container mb-5">
+      <div class="row g-4">
+        {% for index in range(0,supplement_name | length) %} {% if index != 4 %}
+        <div class="col-md-6 col-lg-4">
+          <div class="product-card">
+            <center>
+              <img
+                src="{{supplement_image[index]}}"
+                class="card-img-top"
+                alt="{{supplement_name[index]}}"
+              />
+            </center>
+            <div class="card-body">
+              {% if index==3 or index==5 or index==7 or index==11 or index==15
+              or index==18 or index==20 or index==23 or index==24 or index==25
+              or index==28 or index==38 %}
+              <span class="badge badge-healthy mb-2"
+                >Fertilizer (Healthy Plants)</span
+              >
+              {% else %}
+              <span class="badge badge-diseased mb-2"
+                >Supplement (Diseased Plants)</span
+              >
+              {% endif %}
+              <h5 class="card-title">{{supplement_name[index]}}</h5>
+              <p class="card-text">
+                For treating <strong>{{disease[index]}}</strong>
+              </p>
+              <a target="_blank" href="{{buy[index]}}" class="btn btn-buy mt-3">
+                <i class="fas fa-shopping-cart me-2"></i>Buy Now
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endif %} {% endfor %}
+      </div>
+    </section>
+
+ 
+  
+  </body>
+{% endblock %}
+
+{% block extra_js %}
+<!-- Any page-specific JavaScript here -->
+{% endblock %}
+
+
+    <!-- Bootstrap CSS -->
+   
+  
+
+
+</html>
